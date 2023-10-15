@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Summary</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngfor="let todo of todos">
+      <td>{{ todo.description }}</td>
+      <td>{{ todo.summary }}</td>
+      <td><button (click)="deleteTodo(todo.id)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<label>Description: <input [(ngModel)]="description" /></label>
+<label>Summary: <input [(ngModel)]="summary" /></label>
+<button (click)="addTodo()">Add Todo</button>
+<button (click)="fetchTodos()">Refresh</button>
